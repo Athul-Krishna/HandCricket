@@ -1,5 +1,5 @@
 import random as r
-dec1=input("Odd or Even :  ").lower()       #asks user to input if he/she choose odd oe even
+dec1=input("Odd or Even :  ").lower()       #asks user to input if he/she chooses odd or even
 t1=int(input("User Input: "))
 t2=r.randint(1,6)
 print(f"AI input: {t2}")
