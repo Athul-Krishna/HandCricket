@@ -16,55 +16,60 @@ if play==1:
     print("You are batting!")
 else:
     print("You are bowling!")
-#-------------------------------
-if play==1:
-    runs1=0
-    while True:
-        r1=int(input("User input: "))
-        r2=r.randint(1,6)
-        print(f"AI input: {r2}")
-        if r1==r2:
-            print(f"OUT!!! \nYour Score: {runs1}")
-            break
-        else:
-            runs1+=r1
+#-----------------------------------------------------
 
+def innings1(c):
+        runs=0
+        while True:
+            r1=int(input("User input: "))
+            r2=r.randint(1,6)
+            print(f"AI input: {r2}")
+            if r1==r2:
+                print("OUT!!!")
+                break
+            else:
+                if c==0:          #Shows user is batting
+                    runs+=r1
+                else:               #Shows AI is batting
+                    runs+=r2
+        return runs
+    
+def innings2(runs,c):
+        chase = 0
+        while runs>=chase:
+            r1 = int(input("User input: "))
+            r2 = r.randint(1, 6)
+            print(f"AI input: {r2}")
+            if r1 == r2:
+                print("OUT!!!")
+                break
+            else:
+                if c==0:          #Shows user is batting
+                    chase+=r1
+                else:               #Shows AI is batting
+                    chase+=r2
+        return chase
+
+#-------------------------------------------------------
+
+if play==1:
+    runs1 = innings1(0)
+    print(f"Your score: {runs1}")
     print("Bowl and beat AI")
-    runs2 = 0
-    while runs1>runs2:
-        r1 = int(input("User input: "))
-        r2 = r.randint(1, 6)
-        print(f"AI input: {r2}")
-        if r1 == r2:
-            print(f"OUT!!! \nAI Score: {runs2}\nYour Score: {runs1}\nYou Won")
-            break
-        else:
-            runs2 += r2
-    if runs2>runs1:
-        print(f"AI Score: {runs2}\nYour Score: {runs1}\nYou Lost")
-#-------------------------------
-if play==2:
-    runs2 = 0
-    while True:
-        r1 = int(input("User input: "))
-        r2 = r.randint(1, 6)
-        print(f"AI input: {r2}")
-        if r1 == r2:
-            print(f"OUT!!! \nAI Score: {runs2}")
-            break
-        else:
-            runs2 += r2
-    print("Bat and beat AI")
-    runs1 = 0
-    while runs2>runs1:
-        r1 = int(input("User input: "))
-        r2 = r.randint(1, 6)
-        print(f"AI input: {r2}")
-        if r1 == r2:
-            print(f"OUT!!! \nYour Score: {runs1} \nAI Score: {runs2}\nYou Lost!")
-            break
-        else:
-            runs1 += r1
+    runs2 = innings2(runs1,1)
     if runs1>runs2:
-        print(f"Your Score: {runs1}\nAI Score: {runs2}\nYou Won!!!")
-#-------------------------------
+        print("YOU WON!")
+    else:
+        print("YOU LOST")
+
+#-------------------------------------------------------
+        
+if play==2:
+    runs2 = innings1(1)
+    print(f"AI score: {runs2}")
+    print("Bat and beat AI")
+    runs1 = innings2(runs2,0)
+    if runs1>runs2:
+        print("YOU WON!")
+    else:
+        print("YOU LOST")
