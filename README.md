@@ -1,2 +1,2 @@
 # HandCricket
-Odd or Even game
+Odd or Even game.
