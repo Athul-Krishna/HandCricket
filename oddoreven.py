@@ -1,4 +1,5 @@
 import random as r
+print("Welcome to ODD or EVEN game! /n")
 dec1=input("Odd or Even :  ").lower()       #asks user to input if he/she chooses odd or even
 t1=int(input("User Input: "))
 t2=r.randint(1,6)
@@ -18,7 +19,7 @@ else:
     print("You are bowling!")
 #-----------------------------------------------------
 
-def innings1(c):
+def innings1(c):             
         runs=0
         while True:
             r1=int(input("User input: "))
