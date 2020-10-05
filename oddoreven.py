@@ -1,7 +1,8 @@
 import random as r            # here importing random as r, so that whenever we needs this we can just type r
+print("Welcome to Handcricket game! \n")
 dec1=input("Odd or Even :  ").lower()       #asks user to input if he/she chooses odd or even
 t1=int(input("User Input: "))
-t2=r.randint(1,6)          # randomply picks numbers from 1 to 6
+t2=r.randint(1,6)          # randomly picks numbers from 1 to 6
 print(f"AI input: {t2}")
 toss=t1+t2
 if toss%2 == 0:
@@ -18,7 +19,7 @@ else:
     print("You are bowling!")
 #-----------------------------------------------------
 
-def innings1(c):
+def innings1(c):             
         runs=0
         while True:
             r1=int(input("User input: "))
@@ -66,8 +67,7 @@ if play==1:
         
 if play==2:
     runs2 = innings1(1)
-    print(f"AI score: {runs2}")
-    print("Bat and beat AI")
+    print(f"AI score: {runs2} \n Bat and beat AI \n")
     runs1 = innings2(runs2,0)
     if runs1>runs2:
         print("YOU WON!")
