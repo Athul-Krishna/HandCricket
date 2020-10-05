@@ -1,4 +1,5 @@
-import random as r
+
+import random as r            # here importing random as r, so that whenever we needs this we can just type r
 
 print("Welcome to Handcricket game! \n")
 for i in range(0,3):
@@ -6,7 +7,7 @@ for i in range(0,3):
 print("Get set go")
 dec1=input("Odd or Even :  ").lower()       #asks user to input if he/she chooses odd or even
 t1=int(input("User Input: "))
-t2=r.randint(1,6)
+t2=r.randint(1,6)          # randomly picks numbers from 1 to 6
 print(f"AI input: {t2}")
 toss=t1+t2
 if toss%2 == 0:
