@@ -1,5 +1,5 @@
 import random as r
-print("Welcome to ODD or EVEN game! /n")
+print("Welcome to Handcricket game! \n")
 dec1=input("Odd or Even :  ").lower()       #asks user to input if he/she chooses odd or even
 t1=int(input("User Input: "))
 t2=r.randint(1,6)
@@ -67,8 +67,7 @@ if play==1:
         
 if play==2:
     runs2 = innings1(1)
-    print(f"AI score: {runs2}")
-    print("Bat and beat AI")
+    print(f"AI score: {runs2} \n Bat and beat AI \n")
     runs1 = innings2(runs2,0)
     if runs1>runs2:
         print("YOU WON!")
